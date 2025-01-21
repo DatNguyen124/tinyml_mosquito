@@ -80,7 +80,6 @@ To classify mosquito species into four categories—**Aedes**, **Anopheles**, **
 ├── notebooks
 │   ├── data_preprocessing.ipynb               # Preprocessing pipeline in Jupyter
 │   ├── model_training.ipynb                   # Model training and evaluation in Jupyter
-├── papers                                     # Research papers and related literature
 ```
 
 ---
