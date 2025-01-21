@@ -5,7 +5,8 @@ This repository contains the source code and resources for the **Mosquito Classi
 ---
 
 ## Overview
-
+Module: PROJECT
+Supervisor: Dr. Vo Bich Hien
 ### Project Objective
 - To classify mosquito species into four categories—**Aedes**, **Anopheles**, **Culex**, and **Noise**—using wingbeat sounds, leveraging **1D-CNN models** optimized for TinyML and real-time applications.
 - Approach tinyML, lightweight model and edge processing
@@ -19,12 +20,38 @@ This repository contains the source code and resources for the **Mosquito Classi
 ### Pipeline
 <figure>
     <img src="Project%20Pipelines/Pipeline1.png" alt="Pipeline 1 Overview" title="Pipeline 1">
-    <figcaption>Figure 1: Overview of Pipeline 1</figcaption> (Our Project's Approach).
+    <figcaption>Figure 1: Overview of Pipeline 1</figcaption>
 </figure>
+Pipeline 1 employs TinyML for low-power and cost-effective mosquito species classification. This pipeline is specifically designed for deployment in remote or resource-constrained environments. 
+
+**Advantages:**
+- **Energy Efficiency:** Operates on minimal power, enabling extended use on battery-powered devices.
+- **Cost Savings:** Avoids reliance on cloud computing, reducing deployment and operational expenses.
+- **Compact Design:** Utilizes microcontrollers such as the Arduino Nano 33 BLE Sense, ensuring portability and practicality in the field.
+
+**Limitations:**
+- **Model Constraints:** Requires lightweight models, which can limit classification accuracy and complexity.
+- **Optimization Challenges:** Demands advanced techniques like model pruning and quantization to meet hardware constraints while maintaining real-time responsiveness.
+
+This pipeline highlights the balance between performance and resource limitations inherent to embedded systems. The next sections will explore the hardware and software decisions that enable the success of this pipeline.
+
 <figure>
     <img src="Project%20Pipelines/Pipeline2.png" alt="Pipeline 2 Overview" title="Pipeline 2">
-    <figcaption>Figure 2: Overview of Pipeline 2</figcaption>.
+    <figcaption>Figure 2: Overview of Pipeline 2</figcaption>
 </figure>
+
+Pipeline 2 leverages Edge Impulse for live classification directly at the edge, offering several key benefits.
+**Advantages:**
+- **Real-Time Processing:** Ensures immediate classification results without reliance on cloud infrastructure.
+- **Ease of Deployment:** Utilizes a user-friendly platform with pre-built tools, accelerating development and deployment cycles.
+- **Reduced Latency:** Processes data locally on the device, minimizing delays compared to cloud-dependent workflows.
+
+**Limitations:**
+- **Device Compatibility:** Performance heavily depends on the capabilities of the deployed hardware, requiring careful hardware selection.
+- **Resource Constraints:** Optimization is necessary to balance accuracy and efficiency on low-power devices.
+- **Scalability Challenges:** Tailored adjustments are needed for deployment across diverse hardware setups.
+
+This pipeline demonstrates the potential of edge-based systems for scalable and efficient mosquito classification. The following sections will delve deeper into the optimizations and decisions underlying this approach.
 
 ### Hardware Usage
 
@@ -114,11 +141,15 @@ The `arduino code` folder focuses on sound-related examples and libraries:
 ### Creating the `mos_inferencing` Library with Edge Impulse
 1. **Data Upload:**
    - Upload the preprocessed spectrogram data to Edge Impulse Studio.
-   - Follow the pipeline in Edge Impulse for feature generation and model training.
+   - Follow the pipeline in Edge Impulse (as shown in the image below) for feature generation and model training.
+![image](https://github.com/user-attachments/assets/22502a72-0865-407d-a4df-37f468b825e6)
+![image](https://github.com/user-attachments/assets/19961659-4ce5-4a54-8ceb-23520c96f027)
+
 
 2. **Model Training:**
-   - Train the 1D-CNN model in Edge Impulse using the spectrogram dataset.
+   - Train the 1D-CNN model in Edge Impulse using the spectrogram dataset. Model detailed is attached in this image below.
    - Validate the model to ensure it achieves the desired accuracy (target: 93.32%).
+![image](https://github.com/user-attachments/assets/9a71a03e-1707-4b41-a529-d5b75d03d978)
 
 3. **Model Export:**
    - Export the trained model as an Arduino library.
@@ -141,7 +172,7 @@ The `arduino code` folder focuses on sound-related examples and libraries:
 
 3. **Real-Time Testing:**
    - Test with live audio input or sample mosquito wingbeat audio files.
-   - Observe classification results via serial monitor or connected indicators (e.g., LEDs).
+   - Observe classification results via a serial monitor or connected indicators (e.g., LEDs).
 
 ---
 
@@ -149,13 +180,13 @@ The `arduino code` folder focuses on sound-related examples and libraries:
 - **Classification Accuracy:** 93.32%.
 - **Robust Noise Handling:** Effectively differentiates noise from mosquito species.
 - **Efficient Edge Deployment:** Runs on low-power devices.
-
 ---
 
 ## Future Improvements
 - Enhance noise cancellation for diverse environments.
 - Expand the dataset to include additional mosquito species.
 - Integrate real-time data with public health systems.
+- Working with Pipeline 2
 
 ---
 
@@ -164,10 +195,6 @@ Contributions are welcome! Feel free to open an issue or submit a pull request t
 
 ---
 
-## License
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
----
 
 ## Contact
 - **Authors:** Dinh Thai Duy & Nguyen Man Dat
