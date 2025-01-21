@@ -1,13 +1,13 @@
 # Mosquito Classification Using TinyML
 
-This repository contains the source code and resources for the **Mosquito Classification Project** using **TinyML** techniques. The project focuses on classifying mosquito species based on wingbeat sound patterns with lightweight models suitable for deployment on resource-constrained devices such as microcontrollers.
+This repository contains the source code and resources for the **Mosquito Classification Project** utilizing **TinyML** techniques. The project focuses on classifying mosquito species based on wingbeat sound patterns with lightweight models suitable for deployment on resource-constrained devices such as microcontrollers.
 
 ---
 
 ## Overview
 
 ### Project Objective
-To classify mosquito species into four classes—**Aedes**, **Anopheles**, **Culex**, and **Noise**—using wingbeat sounds, leveraging **1D-CNN models** optimized for TinyML and real-time applications.
+To classify mosquito species into four categories—**Aedes**, **Anopheles**, **Culex**, and **Noise**—using wingbeat sounds, leveraging **1D-CNN models** optimized for TinyML and real-time applications.
 
 ### Key Features
 - **Lightweight 1D-CNN Model:** Designed for edge deployment.
@@ -20,91 +20,123 @@ To classify mosquito species into four classes—**Aedes**, **Anopheles**, **Cul
 ## Repository Structure
 
 ```
-├── python-files
-│   ├── data_preprocessing.py   # Scripts for audio preprocessing and spectrogram generation
-│   ├── model_training.py       # Training and optimization of the 1D-CNN model
-│   ├── model_conversion.py     # Convert trained model to TensorFlow Lite format
-│   ├── utils.py                # Helper functions for data processing
-│
-├── arduino-files
-│   ├── mosquito_classification.ino  # Arduino code for deploying and testing the model
-│   ├── model.h                     # Converted model for Arduino (Edge Impulse export)
-│
+├── arduino code
+│   ├── examples
+│   │   ├── esp32
+│   │   │   ├── esp32_camera                  # Example for ESP32 camera input
+│   │   │   ├── esp32_fusion                  # Example combining sensors on ESP32
+│   │   │   ├── esp32_microphone              # Example for ESP32 microphone input
+│   │   │   └── esp32_microphone_continuous   # Continuous input example for ESP32 microphone
+│   │   ├── nano_ble33_sense
+│   │   │   ├── nano_ble33_sense_accelerometer           # BLE33 Sense accelerometer example
+│   │   │   ├── nano_ble33_sense_accelerometer_continuous # Continuous BLE33 Sense accelerometer example
+│   │   │   ├── nano_ble33_sense_camera                  # BLE33 Sense camera input example
+│   │   │   ├── nano_ble33_sense_fusion                  # Sensor fusion example
+│   │   │   ├── nano_ble33_sense_microphone              # BLE33 Sense microphone input
+│   │   │   └── nano_ble33_sense_microphone_continuous   # Continuous BLE33 Sense microphone input
+│   │   ├── nano_ble33_sense_rev2
+│   │   │   ├── nano_ble33_sense_rev2_accelerometer           # Updated BLE33 Sense accelerometer example
+│   │   │   ├── nano_ble33_sense_rev2_accelerometer_continuous # Continuous accelerometer example for BLE33 Sense rev2
+│   │   │   └── nano_ble33_sense_rev2_fusion                  # Fusion example for BLE33 Sense rev2
+│   │   ├── nicla_sense
+│   │   │   └── nicla_sense_fusion     # Example of sensor fusion for Nicla Sense
+│   │   ├── nicla_vision
+│   │   │   ├── nicla_vision_camera                 # Example for Nicla Vision camera
+│   │   │   ├── nicla_vision_fusion                 # Fusion example for Nicla Vision
+│   │   │   ├── nicla_vision_microphone             # Microphone example for Nicla Vision
+│   │   │   └── nicla_vision_microphone_continuous  # Continuous microphone example for Nicla Vision
+│   │   ├── portenta_h7
+│   │   │   ├── portenta_h7_camera                 # Portenta H7 camera example
+│   │   │   ├── portenta_h7_microphone             # Portenta H7 microphone example
+│   │   │   └── portenta_h7_microphone_continuous  # Continuous Portenta H7 microphone example
+│   │   ├── rp2040
+│   │   │   ├── rp2040_fusion                  # Sensor fusion example for RP2040
+│   │   │   ├── rp2040_microphone              # RP2040 microphone input
+│   │   │   └── rp2040_microphone_continuous   # Continuous microphone input for RP2040
+│   │   ├── sony_spresense
+│   │   │   ├── sony_spresense_camera                 # Camera example for Sony Spresense
+│   │   │   ├── sony_spresense_microphone             # Microphone example for Sony Spresense
+│   │   │   └── sony_spresense_microphone_continuous  # Continuous microphone example for Sony Spresense
+│   │   └── static_buffer
+│   │       └── static_buffer              # Static buffer example
+│   └── src
+│       ├── edge-impulse-sdk
+│       │   ├── classifier                     # Core model inferencing logic
+│       │   ├── CMSIS                          # ARM CMSIS library for DSP operations
+│       │   ├── dsp                            # DSP functions for preprocessing
+│       │   ├── tensorflow                     # TensorFlow Lite Micro library
+│       │   └── third_party                    # Third-party libraries (Flatbuffers, Gemmlowp, etc.)
+│       ├── model-parameters                   # Model-specific parameters
+│       └── tflite-model                       # Exported TensorFlow Lite model
 ├── datasets
-│   ├── WINGBEATS                 # Example dataset folder
-│   ├── ABUZZ                     # Example dataset folder
-│
+│   └── Abuzz
+│       ├── Ae. aegypti                        # Wingbeat data for Ae. aegypti
+│       ├── Ae. albopictus                     # Wingbeat data for Ae. albopictus
+│       ├── An. arabiensis                     # Wingbeat data for An. arabiensis
+│       ├── An. gambiae                        # Wingbeat data for An. gambiae
+│       ├── C. pipiens                         # Wingbeat data for C. pipiens
+│       └── C. quinquefasciatus                # Wingbeat data for C. quinquefasciatus
+├── mic_test                                   # Scripts for microphone testing
 ├── notebooks
-│   ├── data_visualization.ipynb  # Jupyter notebook for exploring and visualizing data
-│   ├── training_results.ipynb    # Jupyter notebook for analyzing model performance
-│
-├── README.md                     # Documentation (this file)
-├── LICENSE                       # Project license
-├── requirements.txt              # Python dependencies
+│   ├── data_preprocessing.ipynb               # Preprocessing pipeline in Jupyter
+│   ├── model_training.ipynb                   # Model training and evaluation in Jupyter
+├── papers                                     # Research papers and related literature
 ```
 
 ---
 
-## Getting Started
+## Usage Guide
 
-### Prerequisites
-1. Python 3.9 or later.
-2. Required libraries:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Arduino IDE with necessary board libraries (e.g., Seeed Studio XIAO nRF52840 Sense).
+### Creating the `mos_inferencing` Library with Edge Impulse
+1. **Data Upload:**
+   - Upload the preprocessed spectrogram data to Edge Impulse Studio.
+   - Follow the pipeline in Edge Impulse for feature generation and model training.
 
-### Setup Instructions
+2. **Model Training:**
+   - Train the 1D-CNN model in Edge Impulse using the spectrogram dataset.
+   - Validate the model to ensure it achieves the desired accuracy (target: 93.32%).
 
-#### Clone Repository
-```bash
-git clone https://github.com/<your-username>/mosquito-classification.git
-cd mosquito-classification
-```
+3. **Model Export:**
+   - Export the trained model as an Arduino library.
+   - In Edge Impulse, navigate to the *Deployment* section and select *Arduino Library*.
+   - Download and extract the library files (e.g., `mos_inferencing.h` and `mos_inferencing.cpp`).
 
-#### Data Preparation
-1. Place raw mosquito wingbeat audio files in the `datasets` folder.
-2. Run `data_preprocessing.py` to preprocess and generate spectrograms:
-   ```bash
-   python python-files/data_preprocessing.py
-   ```
+4. **Integrate with Arduino IDE:**
+   - Copy the exported library files to the Arduino `libraries` folder.
+   - Open `mosquito_classification.ino` and include the library.
 
-#### Model Training
-Train the 1D-CNN model:
-```bash
-python python-files/model_training.py
-```
+### Using the Library in Arduino
+1. **Hardware Setup:**
+   - Use the **Seeed Studio XIAO nRF52840 Sense** for deployment.
+   - Configure the onboard microphone for audio capture.
 
-#### Model Conversion
-Convert the trained model to TensorFlow Lite format for deployment:
-```bash
-python python-files/model_conversion.py
-```
+2. **Uploading the Code:**
+   - Open `mosquito_classification.ino` in Arduino IDE.
+   - Ensure the correct board and port are selected.
+   - Upload the code to the microcontroller.
 
-#### Deployment
-1. Export the converted model as a `.h` file.
-2. Open `arduino-files/mosquito_classification.ino` in Arduino IDE.
-3. Upload the code and model to your microcontroller.
+3. **Real-Time Testing:**
+   - Test with live audio input or sample mosquito wingbeat audio files.
+   - Observe classification results via serial monitor or connected indicators (e.g., LEDs).
 
 ---
 
 ## Results
-- **Classification Accuracy:** 93.32%
-- **Precision & Recall:** High performance across all mosquito species.
-- **Inference Time:** Optimized for real-time classification on edge devices.
+- **Classification Accuracy:** 93.32%.
+- **Robust Noise Handling:** Effectively differentiates noise from mosquito species.
+- **Efficient Edge Deployment:** Runs on low-power devices.
 
 ---
 
 ## Future Improvements
-- Enhance noise reduction for diverse environments.
-- Expand dataset to include additional mosquito species.
-- Integrate with public health surveillance systems.
+- Enhance noise cancellation for diverse environments.
+- Expand the dataset to include additional mosquito species.
+- Integrate real-time data with public health systems.
 
 ---
 
 ## Contributing
-Contributions are welcome! Please open an issue or submit a pull request to suggest improvements or report bugs.
+Contributions are welcome! Feel free to open an issue or submit a pull request to improve the project.
 
 ---
 
@@ -113,12 +145,6 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ---
 
-## Acknowledgments
-- **Supervisor:** Dr. Vo Bich Hien
-- **Institutions:** Vietnamese-German University & Frankfurt University of Applied Sciences
-
----
-
 ## Contact
-- **Author:** Dinh Thai Duy & Nguyen Man Dat
+- **Authors:** Dinh Thai Duy & Nguyen Man Dat
 - **Email:** [your-email@example.com]
