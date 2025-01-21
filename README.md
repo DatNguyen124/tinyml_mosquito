@@ -20,7 +20,7 @@ Supervisor: Dr. Vo Bich Hien
 ### Pipeline
 <figure>
     <img src="Project%20Pipelines/Pipeline1.png" alt="Pipeline 1 Overview" title="Pipeline 1" style="width: 60%;">
-    <figcaption>Figure 1: Overview of Pipeline 1</figcaption>
+    <figcaption></figcaption>
 </figure>
 
 **Pipeline 1** employs TinyML for low-power and cost-effective mosquito species classification. This pipeline is specifically designed for deployment in remote or resource-constrained environments. <br>
@@ -38,7 +38,7 @@ This pipeline highlights the balance between performance and resource limitation
 
 <figure>
     <img src="Project%20Pipelines/Pipeline2.png" alt="Pipeline 2 Overview" title="Pipeline 2" style="width: 60%;">
-    <figcaption>**Figure 2: Overview of Pipeline 2**</figcaption>
+    <figcaption></figcaption>
 </figure>
 
 Pipeline 2 leverages Edge Impulse for live classification directly at the edge, offering several key benefits. <br>
