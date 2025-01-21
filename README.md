@@ -20,31 +20,32 @@ Supervisor: Dr. Vo Bich Hien
 ### Pipeline
 <figure>
     <img src="Project%20Pipelines/Pipeline1.png" alt="Pipeline 1 Overview" title="Pipeline 1" style="width: 60%;">
-    <figcaption>**Figure 1: Overview of Pipeline 1**</figcaption>
+    <figcaption>Figure 1: Overview of Pipeline 1</figcaption>
 </figure>
-Pipeline 1 employs TinyML for low-power and cost-effective mosquito species classification. This pipeline is specifically designed for deployment in remote or resource-constrained environments. 
+
+**Pipeline 1** employs TinyML for low-power and cost-effective mosquito species classification. This pipeline is specifically designed for deployment in remote or resource-constrained environments. <br>
 
 **Advantages:**
 - **Energy Efficiency:** Operates on minimal power, enabling extended use on battery-powered devices.
 - **Cost Savings:** Avoids reliance on cloud computing, reducing deployment and operational expenses.
-- **Compact Design:** Utilizes microcontrollers such as the Arduino Nano 33 BLE Sense, ensuring portability and practicality in the field.
+- **Compact Design:** Utilizes microcontrollers such as the Arduino Nano 33 BLE Sense, ensuring portability and practicality in the field. <br>
 
 **Limitations:**
 - **Model Constraints:** Requires lightweight models, which can limit classification accuracy and complexity.
-- **Optimization Challenges:** Demands advanced techniques like model pruning and quantization to meet hardware constraints while maintaining real-time responsiveness.
+- **Optimization Challenges:** Demands advanced techniques like model pruning and quantization to meet hardware constraints while maintaining real-time responsiveness. <br>
 
-This pipeline highlights the balance between performance and resource limitations inherent to embedded systems. The next sections will explore the hardware and software decisions that enable the success of this pipeline.
+This pipeline highlights the balance between performance and resource limitations inherent to embedded systems. The next sections will explore the hardware and software decisions that enable the success of this pipeline. <br>
 
 <figure>
     <img src="Project%20Pipelines/Pipeline2.png" alt="Pipeline 2 Overview" title="Pipeline 2" style="width: 60%;">
     <figcaption>**Figure 2: Overview of Pipeline 2**</figcaption>
 </figure>
 
-Pipeline 2 leverages Edge Impulse for live classification directly at the edge, offering several key benefits.
+Pipeline 2 leverages Edge Impulse for live classification directly at the edge, offering several key benefits. <br>
 **Advantages:**
 - **Real-Time Processing:** Ensures immediate classification results without reliance on cloud infrastructure.
 - **Ease of Deployment:** Utilizes a user-friendly platform with pre-built tools, accelerating development and deployment cycles.
-- **Reduced Latency:** Processes data locally on the device, minimizing delays compared to cloud-dependent workflows.
+- **Reduced Latency:** Processes data locally on the device, minimizing delays compared to cloud-dependent workflows. <br>
 
 **Limitations:**
 - **Device Compatibility:** Performance heavily depends on the capabilities of the deployed hardware, requiring careful hardware selection.
