@@ -5,8 +5,8 @@ This repository contains the source code and resources for the **Mosquito Classi
 ---
 
 ## Overview
-Module: PROJECT
-Supervisor: Dr. Vo Bich Hien
+#### Module: PROJECT
+#### Supervisor: Dr. Vo Bich Hien
 ### Project Objective
 - To classify mosquito species into four categories—**Aedes**, **Anopheles**, **Culex**, and **Noise**—using wingbeat sounds, leveraging **1D-CNN models** optimized for TinyML and real-time applications.
 - Approach tinyML, lightweight model and edge processing
