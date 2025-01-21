@@ -23,64 +23,72 @@ To classify mosquito species into four categories—**Aedes**, **Anopheles**, **
 ├── arduino code
 │   ├── examples
 │   │   ├── esp32
-│   │   │   ├── esp32_camera                  # Example for ESP32 camera input
-│   │   │   ├── esp32_fusion                  # Example combining sensors on ESP32
 │   │   │   ├── esp32_microphone              # Example for ESP32 microphone input
 │   │   │   └── esp32_microphone_continuous   # Continuous input example for ESP32 microphone
 │   │   ├── nano_ble33_sense
-│   │   │   ├── nano_ble33_sense_accelerometer           # BLE33 Sense accelerometer example
-│   │   │   ├── nano_ble33_sense_accelerometer_continuous # Continuous BLE33 Sense accelerometer example
-│   │   │   ├── nano_ble33_sense_camera                  # BLE33 Sense camera input example
-│   │   │   ├── nano_ble33_sense_fusion                  # Sensor fusion example
 │   │   │   ├── nano_ble33_sense_microphone              # BLE33 Sense microphone input
 │   │   │   └── nano_ble33_sense_microphone_continuous   # Continuous BLE33 Sense microphone input
 │   │   ├── nano_ble33_sense_rev2
-│   │   │   ├── nano_ble33_sense_rev2_accelerometer           # Updated BLE33 Sense accelerometer example
-│   │   │   ├── nano_ble33_sense_rev2_accelerometer_continuous # Continuous accelerometer example for BLE33 Sense rev2
-│   │   │   └── nano_ble33_sense_rev2_fusion                  # Fusion example for BLE33 Sense rev2
-│   │   ├── nicla_sense
-│   │   │   └── nicla_sense_fusion     # Example of sensor fusion for Nicla Sense
+│   │   │   ├── nano_ble33_sense_rev2_microphone         # Updated BLE33 Sense microphone example
+│   │   │   └── nano_ble33_sense_rev2_microphone_continuous # Continuous microphone example for BLE33 Sense rev2
 │   │   ├── nicla_vision
-│   │   │   ├── nicla_vision_camera                 # Example for Nicla Vision camera
-│   │   │   ├── nicla_vision_fusion                 # Fusion example for Nicla Vision
 │   │   │   ├── nicla_vision_microphone             # Microphone example for Nicla Vision
 │   │   │   └── nicla_vision_microphone_continuous  # Continuous microphone example for Nicla Vision
 │   │   ├── portenta_h7
-│   │   │   ├── portenta_h7_camera                 # Portenta H7 camera example
 │   │   │   ├── portenta_h7_microphone             # Portenta H7 microphone example
 │   │   │   └── portenta_h7_microphone_continuous  # Continuous Portenta H7 microphone example
 │   │   ├── rp2040
-│   │   │   ├── rp2040_fusion                  # Sensor fusion example for RP2040
 │   │   │   ├── rp2040_microphone              # RP2040 microphone input
 │   │   │   └── rp2040_microphone_continuous   # Continuous microphone input for RP2040
 │   │   ├── sony_spresense
-│   │   │   ├── sony_spresense_camera                 # Camera example for Sony Spresense
 │   │   │   ├── sony_spresense_microphone             # Microphone example for Sony Spresense
 │   │   │   └── sony_spresense_microphone_continuous  # Continuous microphone example for Sony Spresense
 │   │   └── static_buffer
-│   │       └── static_buffer              # Static buffer example
+│   │       └── static_buffer                  # Static buffer example for audio processing
 │   └── src
 │       ├── edge-impulse-sdk
 │       │   ├── classifier                     # Core model inferencing logic
-│       │   ├── CMSIS                          # ARM CMSIS library for DSP operations
-│       │   ├── dsp                            # DSP functions for preprocessing
+│       │   ├── dsp                            # DSP functions for audio preprocessing
 │       │   ├── tensorflow                     # TensorFlow Lite Micro library
 │       │   └── third_party                    # Third-party libraries (Flatbuffers, Gemmlowp, etc.)
 │       ├── model-parameters                   # Model-specific parameters
 │       └── tflite-model                       # Exported TensorFlow Lite model
 ├── datasets
-│   └── Abuzz
-│       ├── Ae. aegypti                        # Wingbeat data for Ae. aegypti
-│       ├── Ae. albopictus                     # Wingbeat data for Ae. albopictus
-│       ├── An. arabiensis                     # Wingbeat data for An. arabiensis
-│       ├── An. gambiae                        # Wingbeat data for An. gambiae
-│       ├── C. pipiens                         # Wingbeat data for C. pipiens
-│       └── C. quinquefasciatus                # Wingbeat data for C. quinquefasciatus
-├── mic_test                                   # Scripts for microphone testing
+│   ├── Abuzz
+│   │   ├── Ae. aegypti                        # Wingbeat data for Ae. aegypti
+│   │   ├── Ae. albopictus                     # Wingbeat data for Ae. albopictus
+│   │   ├── An. arabiensis                     # Wingbeat data for An. arabiensis
+│   │   ├── An. gambiae                        # Wingbeat data for An. gambiae
+│   │   ├── C. pipiens                         # Wingbeat data for C. pipiens
+│   │   └── C. quinquefasciatus                # Wingbeat data for C. quinquefasciatus
+│   └── Abuzz_Preprocessed
+│       ├── aedes                              # Preprocessed spectrograms for Aedes class
+│       ├── anopheles                          # Preprocessed spectrograms for Anopheles class
+│       ├── culex                              # Preprocessed spectrograms for Culex class
+│       └── noise                              # Preprocessed spectrograms for Noise class
+├── mic_test                                   # Scripts for testing microphone performance
 ├── notebooks
 │   ├── data_preprocessing.ipynb               # Preprocessing pipeline in Jupyter
 │   ├── model_training.ipynb                   # Model training and evaluation in Jupyter
+├── Project Pipelines                          # Documentation for project workflows
 ```
+
+---
+
+## Optimized File Usage in Arduino
+
+The `arduino code` folder focuses on sound-related examples and libraries:
+
+- **Microphone Examples:**
+  - Examples tailored for devices such as ESP32, BLE33 Sense, Nicla Vision, Portenta H7, and RP2040.
+  - Continuous microphone examples for real-time inferencing.
+
+- **Static Buffer Example:**
+  - Demonstrates audio processing using static buffers, ideal for resource-constrained devices.
+
+- **Edge-Impulse-SDK:**
+  - Contains core libraries for running TinyML models on microcontrollers.
+  - Includes DSP functions for audio feature extraction and TensorFlow Lite Micro libraries for inferencing.
 
 ---
 
