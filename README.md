@@ -17,8 +17,14 @@ This repository contains the source code and resources for the **Mosquito Classi
 - **Cost-Effective Deployment:** Suitable for resource-limited environments.
 
 ### Pipeline
-![Pipeline Overview](Project%20Pipelines/Pipeline1.png "Pipeline 1")
-![Pipeline Overview](Project%20Pipelines/Pipeline2.png "Pipeline 2")
+<figure>
+    <img src="Project%20Pipelines/Pipeline1.png" alt="Pipeline 1 Overview" title="Pipeline 1">
+    <figcaption>Figure 1: Overview of Pipeline 1</figcaption>
+</figure>
+<figure>
+    <img src="Project%20Pipelines/Pipeline2.png" alt="Pipeline 2 Overview" title="Pipeline 2">
+    <figcaption>Figure 2: Overview of Pipeline 2</figcaption>
+</figure>
 ### Hardware Usage
 
 
