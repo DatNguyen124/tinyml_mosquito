@@ -25,6 +25,7 @@ This repository contains the source code and resources for the **Mosquito Classi
     <img src="Project%20Pipelines/Pipeline2.png" alt="Pipeline 2 Overview" title="Pipeline 2">
     <figcaption>Figure 2: Overview of Pipeline 2</figcaption>
 </figure>
+
 ### Hardware Usage
 
 
