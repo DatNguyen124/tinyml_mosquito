@@ -19,8 +19,8 @@ Supervisor: Dr. Vo Bich Hien
 
 ### Pipeline
 <figure>
-    <img src="Project%20Pipelines/Pipeline1.png" alt="Pipeline 1 Overview" title="Pipeline 1">
-    <figcaption>Figure 1: Overview of Pipeline 1</figcaption>
+    <img src="Project%20Pipelines/Pipeline1.png" alt="Pipeline 1 Overview" title="Pipeline 1" style="width: 60%;">
+    <figcaption>**Figure 1: Overview of Pipeline 1**</figcaption>
 </figure>
 Pipeline 1 employs TinyML for low-power and cost-effective mosquito species classification. This pipeline is specifically designed for deployment in remote or resource-constrained environments. 
 
@@ -36,8 +36,8 @@ Pipeline 1 employs TinyML for low-power and cost-effective mosquito species clas
 This pipeline highlights the balance between performance and resource limitations inherent to embedded systems. The next sections will explore the hardware and software decisions that enable the success of this pipeline.
 
 <figure>
-    <img src="Project%20Pipelines/Pipeline2.png" alt="Pipeline 2 Overview" title="Pipeline 2">
-    <figcaption>Figure 2: Overview of Pipeline 2</figcaption>
+    <img src="Project%20Pipelines/Pipeline2.png" alt="Pipeline 2 Overview" title="Pipeline 2" style="width: 60%;">
+    <figcaption>**Figure 2: Overview of Pipeline 2**</figcaption>
 </figure>
 
 Pipeline 2 leverages Edge Impulse for live classification directly at the edge, offering several key benefits.
@@ -54,7 +54,23 @@ Pipeline 2 leverages Edge Impulse for live classification directly at the edge, 
 This pipeline demonstrates the potential of edge-based systems for scalable and efficient mosquito classification. The following sections will delve deeper into the optimizations and decisions underlying this approach.
 
 ### Hardware Usage
+Initially, the Arduino Nano 33 BLE Sense was considered ideal for this project due to its powerful hardware and compatibility with TinyML frameworks. However, the high cost of this device in Vietnam made it less practical for deployment. As an alternative, we chose the Seeed Studio XIAO nRF52840 Sense, which offers similar hardware specifications at a more affordable price point. This decision ensures cost-effectiveness while maintaining the computational capabilities required for real-time mosquito classification.
 
+#### Comparison of Arduino Nano 33 BLE Sense and Seeed Studio XIAO nRF52840 Sense:
+
+| Feature                          | Arduino Nano 33 BLE Sense                        | Seeed Studio XIAO nRF52840 Sense              |
+|----------------------------------|--------------------------------------------------|-----------------------------------------------|
+| Processing Unit                  | Nordic Semiconductor nRF52840 SoC, 32-bit ARM Cortex-M4 CPU (64 MHz) | Nordic Semiconductor nRF52840 SoC, 32-bit ARM Cortex-M4 CPU (64 MHz) |
+| Memory                           | 256 KB RAM, 1 MB Flash                           | 256 KB RAM, 1 MB Flash                       |
+| Connectivity                     | Bluetooth 5.0 (BLE), NFC                         | Bluetooth 5.0 (BLE), NFC, USB-C              |
+| Sensors                          | Environmental (temperature, humidity, pressure), motion (accelerometer, gyroscope), microphone | Environmental (temperature, humidity, pressure), motion (accelerometer, gyroscope), microphone |
+| Power                            | Low-power design                                  | Low-power design, battery-friendly            |
+| Peripherals                      | UART, I2C, SPI, PWM, ADC, GPIO                   | UART, I2C, SPI, PWM, ADC, GPIO               |
+| Development Tools                | Arduino IDE, CircuitPython, Edge Impulse, TinyML | Arduino IDE, CircuitPython, Edge Impulse, TinyML |
+| Form Factor                      | 45 x 18 mm                                       | 21 x 17.5 mm                                 |
+| Price                            | ∼ 1,400,000 VND (approx.)                        | ∼ 500,000 VND (approx.)                      |
+
+**Table 4.1:** Comparison of Arduino Nano 33 BLE Sense and Seeed Studio XIAO nRF52840 Sense
 
 ### Model
 
