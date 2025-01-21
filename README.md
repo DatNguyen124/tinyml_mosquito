@@ -19,11 +19,11 @@ This repository contains the source code and resources for the **Mosquito Classi
 ### Pipeline
 <figure>
     <img src="Project%20Pipelines/Pipeline1.png" alt="Pipeline 1 Overview" title="Pipeline 1">
-    <figcaption>Figure 1: Overview of Pipeline 1</figcaption>
+    <figcaption>Figure 1: Overview of Pipeline 1</figcaption> (Our Project's Approach).
 </figure>
 <figure>
     <img src="Project%20Pipelines/Pipeline2.png" alt="Pipeline 2 Overview" title="Pipeline 2">
-    <figcaption>Figure 2: Overview of Pipeline 2</figcaption>
+    <figcaption>Figure 2: Overview of Pipeline 2</figcaption>.
 </figure>
 
 ### Hardware Usage
