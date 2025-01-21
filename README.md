@@ -74,7 +74,20 @@ Initially, the Arduino Nano 33 BLE Sense was considered ideal for this project d
 **Table 4.1:** Comparison of Arduino Nano 33 BLE Sense and Seeed Studio XIAO nRF52840 Sense
 
 ### Model
+The input data consisted of 1D spectrogram images with 5,135 features (65 columns x 79 rows). A simple 1D-CNN model was used, designed with:
 
+- Two 1D-CNN layers (32 and 64 neurons) with ReLU activation
+- MaxPooling layers (size: 2, stride: 2, padding: "same")
+- Dropout layer (50% rate)
+- Dense layer (4 neurons) with Softmax for final classification
+
+The best training results were achieved with these parameters:
+
+- Learning rate: 0.001
+- Batch size: 32
+- Epochs: 100 (with early stopping at 5 patience on val_loss)
+
+This 1D-CNN design strikes a balance between accuracy and efficiency, making it ideal for edge deployment, where resource constraints demand streamlined yet effective models.
 
 ---
 
