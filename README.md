@@ -7,13 +7,23 @@ This repository contains the source code and resources for the **Mosquito Classi
 ## Overview
 
 ### Project Objective
-To classify mosquito species into four categories—**Aedes**, **Anopheles**, **Culex**, and **Noise**—using wingbeat sounds, leveraging **1D-CNN models** optimized for TinyML and real-time applications.
+- To classify mosquito species into four categories—**Aedes**, **Anopheles**, **Culex**, and **Noise**—using wingbeat sounds, leveraging **1D-CNN models** optimized for TinyML and real-time applications.
+- Approach tinyML, lightweight model and edge processing
 
 ### Key Features
 - **Lightweight 1D-CNN Model:** Designed for edge deployment.
 - **Real-Time Inference:** Runs efficiently on devices like the Seeed Studio XIAO nRF52840 Sense.
 - **Noise Robustness:** Includes background noise handling for real-world applications.
 - **Cost-Effective Deployment:** Suitable for resource-limited environments.
+
+### Pipeline
+![Pipeline Overview](Project%20Pipelines/Pipeline1.png)
+![Pipeline Overview](Project%20Pipelines/Pipeline2.png)
+### Hardware Usage
+
+
+### Model
+
 
 ---
 
@@ -154,4 +164,4 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ## Contact
 - **Authors:** Dinh Thai Duy & Nguyen Man Dat
-- **Email:** [your-email@example.com]
+- **Email:** 10421014@student.vgu.edu.vn - 10421008@student.vgu.edu.vn
