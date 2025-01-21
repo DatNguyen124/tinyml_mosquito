@@ -18,7 +18,7 @@ This repository contains the source code and resources for the **Mosquito Classi
 - **Cost-Effective Deployment:** Suitable for resource-limited environments.
 
 ### Pipeline
-<figure style="text-align: center;>
+<figure "style="text-align: center;">
     <img src="Project%20Pipelines/Pipeline1.png" alt="Pipeline 1 Overview" title="Pipeline 1" style="width: 60%;">
     <figcaption></figcaption>
 </figure>
@@ -36,7 +36,7 @@ This repository contains the source code and resources for the **Mosquito Classi
 
 This pipeline highlights the balance between performance and resource limitations inherent to embedded systems. The next sections will explore the hardware and software decisions that enable the success of this pipeline. <br>
 
-<figure style="text-align: center;>
+<figure "style="text-align: center;">
     <img src="Project%20Pipelines/Pipeline2.png" alt="Pipeline 2 Overview" title="Pipeline 2" style="width: 60%;">
     <figcaption></figcaption>
 </figure>
